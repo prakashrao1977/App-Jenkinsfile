@@ -3,7 +3,8 @@ pipeline {
   stages {
     stage('Compile') {
       steps {
-        sh 'mvn clean compile'
+        sh '''source /etc/bashrc
+mvn clean compile'''
       }
     }
 
