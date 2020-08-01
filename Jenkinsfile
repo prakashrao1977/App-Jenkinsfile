@@ -1,10 +1,15 @@
 pipeline {
   agent any
   stages {
+    stage('SetEnv') {
+      steps {
+        sh 'source /etc/bashrc'
+      }
+    }
+
     stage('Compile') {
       steps {
-        sh '''source /etc/bashrc
-mvn clean compile'''
+        sh 'mvn clean compile'
       }
     }
 
